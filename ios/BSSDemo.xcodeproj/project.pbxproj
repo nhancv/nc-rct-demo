@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -59,6 +58,7 @@
 		EC5A73DE1D6C4EBD8B7E54E8 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C87E0AD5B5430186048C2D /* libjschelpers.a */; };
 		F99FB64B51E54D03940370F1 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 790EC8AD40B14462A3FAE9B8 /* Entypo.ttf */; };
 		FF6F1985D62D432A8A1A6F8E /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9A64930FD8B423A827E0537 /* Roboto_medium.ttf */; };
+		91A056DF886E45CAA60AA1D5 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4888F5D40C6C4008927B4277 /* IndieFlower.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -428,6 +428,7 @@
 		F620A4F3777843E78EE63A26 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		F9BA35D071D049EB9B3859FA /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		FFD69035235C41279392E040 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		4888F5D40C6C4008927B4277 /* IndieFlower.ttf */ = {isa = PBXFileReference; name = "IndieFlower.ttf"; path = "../App/Fonts/IndieFlower.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -624,6 +625,7 @@
 				D51E028572FD4192A7CC36A4 /* rubicon-icon-font.ttf */,
 				BB178CC68A2C47D391E6B62D /* SimpleLineIcons.ttf */,
 				D02FF6D9E58B4343B1BD5E3F /* Zocial.ttf */,
+				4888F5D40C6C4008927B4277 /* IndieFlower.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1250,6 +1252,7 @@
 				4F8FC9FED42A40D3854DE23A /* rubicon-icon-font.ttf in Resources */,
 				587A95603FD54EE2AFE72336 /* SimpleLineIcons.ttf in Resources */,
 				4DEE2CC7CF42465F81685312 /* Zocial.ttf in Resources */,
+				91A056DF886E45CAA60AA1D5 /* IndieFlower.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } fr
 import MainStyles from './Main.Styles'
 import Config from 'react-native-config'
 export default class MainScreen extends Component {
+
   render() {
     return (
       <Container>
@@ -18,7 +19,7 @@ export default class MainScreen extends Component {
             <View style={MainStyles.center}>
               <Text
                 style={{
-                  fontFamily: 'Roboto-Light'
+                  fontFamily: 'IndieFlower'
                 }}
               >
                 This is main
