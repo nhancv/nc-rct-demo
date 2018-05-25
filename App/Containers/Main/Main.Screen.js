@@ -5,7 +5,6 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } fr
 import MainStyles from './Main.Styles'
 import Config from 'react-native-config'
 export default class MainScreen extends Component {
-
   render() {
     return (
       <Container>
@@ -15,15 +14,33 @@ export default class MainScreen extends Component {
           </Body>
         </Header>
         <Content>
-
           <View style={MainStyles.container}>
             <View style={MainStyles.center}>
-              <Text style={{
-                fontFamily: "Roboto-Light"
-                }}>This is main</Text>
+              <Text
+                style={{
+                  fontFamily: 'Roboto-Light'
+                }}
+              >
+                This is main
+              </Text>
+              <Image style={{ width: 50, height: 50 }} source={require('../../Images/launch-icon.png')} />
+              <Image
+                style={{ width: 50, height: 50 }}
+                source={{ uri: 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png' }}
+              />
+              <Image
+                style={{ width: 50, height: 50 }}
+                source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+              />
+              <Image
+                style={{ width: 66, height: 58 }}
+                source={{
+                  uri:
+                    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='
+                }}
+              />
             </View>
           </View>
-
         </Content>
       </Container>
     )
