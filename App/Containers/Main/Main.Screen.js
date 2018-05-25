@@ -27,6 +27,9 @@ export default class MainScreen extends Component {
                 This is main
               </Text>
               <Text>{I18n.t('welcome')}</Text>
+              <Button onPress={() => {
+                this.props.navigation.navigate('DemoScreen', {})
+              }}><Text>Click Me! </Text></Button>
               <Image style={{ width: 50, height: 50 }} source={require('../../Images/launch-icon.png')} />
               <Image
                 style={{ width: 50, height: 50 }}
