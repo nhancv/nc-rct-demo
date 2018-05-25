@@ -4,6 +4,8 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } fr
 
 import MainStyles from './Main.Styles'
 import Config from 'react-native-config'
+import I18n from '../../I18n/'
+I18n.initLanguage('vi')
 export default class MainScreen extends Component {
 
   render() {
@@ -24,6 +26,7 @@ export default class MainScreen extends Component {
               >
                 This is main
               </Text>
+              <Text>{I18n.t('welcome')}</Text>
               <Image style={{ width: 50, height: 50 }} source={require('../../Images/launch-icon.png')} />
               <Image
                 style={{ width: 50, height: 50 }}
