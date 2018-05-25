@@ -3,6 +3,10 @@ import API from '../Services/Api'
 import FixtureAPI from '../Services/FixtureApi'
 import DebugConfig from '../Config/DebugConfig'
 
+/* ------------ ACTION ------------ */
+import {DemoType, DemoFunction} from '../Containers/Demo/Demo.Action'
+import DemoApi from '../Containers/Demo/Demo.Api'
+
 /* ------------- Types ------------- */
 
 import { StartupTypes } from '../Redux/StartupRedux'
@@ -27,6 +31,10 @@ export default function * root () {
     takeLatest(StartupTypes.STARTUP, startup),
 
     // some sagas receive extra parameters in addition to an action
-    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api)
+    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
+
+    // Demo redux flow
+    takeLatest(DemoType.REST_API_REQUEST, DemoFunction.getRestData, DemoApi.create()),
+    takeLatest(DemoType.FAKE_DATA_REQUEST, DemoFunction.getFakeData, DemoApi.create())
   ])
 }
