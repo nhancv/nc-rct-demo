@@ -3,9 +3,9 @@ import API from '../Services/Api'
 import FixtureAPI from '../Services/FixtureApi'
 import DebugConfig from '../Config/DebugConfig'
 
-/* ------------ ACTION ------------ */
-import {DemoType, DemoFunction} from '../Containers/Demo/Demo.Action'
-import DemoApi from '../Containers/Demo/Demo.Api'
+/* ------------ REDUX ------------ */
+import DemoActionCode, { DemoLogicFunc, DemoServices} from '../Containers/Demo/Demo.Reducer'
+
 
 /* ------------- Types ------------- */
 
@@ -34,7 +34,7 @@ export default function * root () {
     takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api),
 
     // Demo redux flow
-    takeLatest(DemoType.REST_API_REQUEST, DemoFunction.getRestData, DemoApi.create()),
-    takeLatest(DemoType.FAKE_DATA_REQUEST, DemoFunction.getFakeData, DemoApi.create())
+    takeLatest(DemoActionCode.REST_API_REQUEST, DemoLogicFunc.getRestData, DemoServices),
+    takeLatest(DemoActionCode.FAKE_DATA_REQUEST, DemoLogicFunc.getFakeData, DemoServices)
   ])
 }

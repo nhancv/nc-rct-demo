@@ -1,42 +1,72 @@
-import {DemoType} from './Demo.Action'
-import {createReducer} from 'reduxsauce'
+import { call, put } from 'redux-saga/effects'
+import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
+import Api from './Demo.Api'
+import { DemoAction, DemoActionCode } from './Demo.Action'
+
+export default DemoActionCode
+export const DemoServices = Api.create()
+
+/* ------------- Business logic ------------- */
+export const DemoLogicFunc = {
+  getFakeData,
+  getRestData
+}
+
+function* getFakeData(api, action) {
+  const response = yield call(api.getFakeData)
+  yield put(DemoAction.success(response))
+}
+
+function* getRestData(api, action) {
+  const { username } = action
+  const response = yield call(api.getUser, username)
+  if (response.ok && response.status === 200) {
+    yield put(DemoAction.success(JSON.stringify(response.data)))
+  } else {
+    yield put(DemoAction.failure(JSON.stringify(response.data)))
+  }
+}
 
 /* ------------- Initial State ------------- */
 const INITIAL_STATE = Immutable({
   data: null,
   isFetching: false,
   error: false
-});
+})
 
-/* ------------- Reducers ------------- */
+/* ------------- Hookup Reducers To Types ------------- */
 export const reducer = createReducer(INITIAL_STATE, {
-  [DemoType.FAKE_DATA_REQUEST]: (state, action) => {
-    return {...state,
+  [DemoActionCode.FAKE_DATA_REQUEST]: (state, action) => {
+    return {
+      ...state,
       data: null,
       isFetching: true,
       error: false
     }
   },
-  [DemoType.REST_API_REQUEST]: (state, action) => {
-    return {...state,
+  [DemoActionCode.REST_API_REQUEST]: (state, action) => {
+    return {
+      ...state,
       data: null,
       isFetching: true,
       error: false
     }
   },
-  [DemoType.SUCCESS]: (state, action) => {
-    return {...state,
+  [DemoActionCode.SUCCESS]: (state, action) => {
+    return {
+      ...state,
       data: action.data,
       isFetching: false,
       error: false
     }
   },
-  [DemoType.FAILURE]: (state, action) => {
-    return {...state,
+  [DemoActionCode.FAILURE]: (state, action) => {
+    return {
+      ...state,
       data: action.error,
       isFetching: false,
       error: true
     }
   }
-});
+})
