@@ -1,9 +1,11 @@
 import { call, put } from 'redux-saga/effects'
 import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-import Api from './Demo.Api'
-import { DemoAction, DemoActionCode } from './Demo.Action'
 
+// Import Action and Api services
+import { DemoAction, DemoActionCode } from './Demo.Action'
+import Api from './Demo.Api'
+// Export ActionCode and Services
 export default DemoActionCode
 export const DemoServices = Api.create()
 
