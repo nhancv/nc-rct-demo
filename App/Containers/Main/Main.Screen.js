@@ -5,8 +5,22 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } fr
 import MainStyles from './Main.Styles'
 import Config from 'react-native-config'
 import I18n from '../../I18n/'
-I18n.initLanguage('vi')
+// I18n.initLanguage('vi')
 export default class MainScreen extends Component {
+  state = {
+    locale: I18n.locale.substr(0, 2)
+  }
+
+  toogleLanguage = () => {
+    let lang
+    if(this.state.locale.indexOf("vi") > -1) {
+      lang = 'en'
+    } else {
+      lang = 'vi'
+    }
+    I18n.initLanguage(lang)
+    this.setState({locale: lang})
+  }
 
   render() {
     return (
@@ -27,9 +41,20 @@ export default class MainScreen extends Component {
                 This is main
               </Text>
               <Text>{I18n.t('welcome')}</Text>
-              <Button onPress={() => {
-                this.props.navigation.navigate('DemoScreen', {})
-              }}><Text>Click Me! </Text></Button>
+              <Button light
+                onPress={() => {
+                  this.toogleLanguage()
+                }}
+              >
+                <Text> I18n - {this.state.locale} </Text>
+              </Button>
+              <Button warning
+                onPress={() => {
+                  this.props.navigation.navigate('DemoScreen', {})
+                }}
+              >
+                <Text> DemoScreen </Text>
+              </Button>
               <Image style={{ width: 50, height: 50 }} source={require('../../Images/launch-icon.png')} />
               <Image
                 style={{ width: 50, height: 50 }}
